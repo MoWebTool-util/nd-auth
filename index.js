@@ -28,16 +28,6 @@ function nonce() {
   return new Date().getTime() + ':' + rnd(8);
 }
 
-// {
-//   "access_token": "7B5A07FC9B656ED2F640991E1D69557CD25DA30B2C44B497F5E5AE774B2B306C18B590A71B3F069F",
-//   "expires_at": "2015-04-20T21:58:32.830+0800",
-//   "mac_algorithm": "hmac-sha-256",
-//   "mac_key": "NY3YSdOTcQ",
-//   "refresh_token": "7B5A07FC9B656ED2F65ED04CA451FDB75CE0D8C523CB99CC2C59347628E936ABDCBB9DA2856A945D",
-//   "server_time": "2015-04-13T21:58:32.839+0800",
-//   "user_id": 2107039396
-// }
-
 module.exports = {
 
   tokenKey: 'UC_TOKENS',
