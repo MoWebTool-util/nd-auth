@@ -20,7 +20,7 @@
   "spm": {
     "main": "index.js",
     "dependencies": {
-      "nd-storage": "0.1.0",
+      "nd-storage": "1.0.0",
       "nd-sha": "1.0.0",
       "nd-datetime": "1.0.0"
     },

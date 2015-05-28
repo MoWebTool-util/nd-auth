@@ -1,6 +1,7 @@
 /**
- * @module: nd-auth
- * @author: crossjs <liwenfu@crossjs.com> - 2015-04-14 13:54:53
+ * @module Auth
+ * @author crossjs <liwenfu@crossjs.com>
+ * @create 2015-04-14 13:54:53
  */
 
 'use strict';
@@ -8,6 +9,8 @@
 var Storage = require('nd-storage');
 var Sha = require('nd-sha');
 var datetime = require('nd-datetime');
+
+var storage = new Storage();
 
 function nonce() {
   function rnd(min, max) {
@@ -43,11 +46,7 @@ module.exports = {
 
     if (!tokens) {
       // 本地存储
-      tokens = Storage.get(this.tokenKey);
-
-      if (tokens) {
-        tokens = JSON.parse(tokens);
-      }
+      tokens = storage.get(this.tokenKey);
     }
 
     if (tokens) {
@@ -77,9 +76,9 @@ module.exports = {
     this.tokens = tokens;
 
     if (tokens === null) {
-      Storage.remove(this.tokenKey);
+      storage.remove(this.tokenKey);
     } else {
-      Storage.set(this.tokenKey, JSON.stringify(tokens));
+      storage.set(this.tokenKey, tokens);
     }
   },
 
